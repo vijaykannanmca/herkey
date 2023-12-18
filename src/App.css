@@ -1,38 +1,420 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Open Sans';
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Style the header */
+.header {
+  padding: 15px;
+  background-color: white;
+  position: -webkit-sticky;
+  position: sticky;
+  display: block;
+  top: 0;
+  z-index: 1
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.applogo {
+  display: inline-flex;
+  vertical-align: middle;
+  width: 20%;
+}
+.applogo button { 
+  border: 0;
+  margin-left: auto;
+}
+.forever {
+  vertical-align: middle;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-position: center;
+  display: inline;
+  background-image: url(forever.png);
+  float: right;
+}
+.header ul {
+  display: inline-flex;
+}
+.header li {
+  padding: 0px 20px;
+  color: #000000;
+  list-style: none;
+  font-size: 16px;
+  font-weight: normal;
+}
+/* Container for flexboxes */
+section {
+  display: -webkit-flex;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+/* Style the navigation menu */
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background-color: #404040;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+nav li {
+  color: #A2A3B7;
+}
+.avatarBlock {
+  padding: 20px;
+}
+.avatar {
+  vertical-align: middle;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-image: url(hp.png);
+  background-position: center;
+  display: inline-block;
+}
+.avatarHello {
+  text-align: left;
+  font-size: 40px;
+  font-weight: normal;
+  height: 48px;
+  vertical-align: middle;
+  color: #FFFFFF;
+  padding-left: 5px;
+}
+.avatarName {
+  text-align: left;
+  font-size: 22px;
+  color: #FFFFFF;
+}
+.rightArrow {
+  color: #99CA3B;
+  float: right;
+  font-weight: bold;
+}
+.sideMenus {
+  margin-top: 40px;
+}
+.menu {
+  margin: 30px 0px;
+  padding-left: 30px;
+}
+.menu-active {
+  background-color: #313136;
+  height: 45px;
+  border-left-color: #99CA3B;
+  border-left-width: 5px;
+  border-left-style: solid;
+}
+.dashboardIcon{
+  width: 24px;
+  height: 25px;
+  background-image: url(dashboard.svg);
+  background-position: center;
+  display: inline-block;
+  margin-right: 15px;
+}
+.jobIcon {
+  width: 24px;
+  height: 22px;
+  background-image: url(Jobs_Outline.svg);
+  background-position: center;
+  display: inline-block;
+  margin-right: 15px;
+}
+.profileIcon {
+  width: 24px;
+  height: 28px;
+  background-image: url(profiles.svg);
+  background-position: center;
+  display: inline-block;
+  margin-right: 15px;
+}
+.followersIcon {
+  width: 24px;
+  height: 24px;
+  background-image: url(followers.svg);
+  background-position: center;
+  display: inline-block;
+  margin-right: 15px;
+}
+.myInventoryIcon {
+  width: 24px;
+  height: 30px;
+  background-image: url(enterprise.svg);
+  background-position: center;
+  display: inline-block;
+  margin-right: 15px;
+}
+.enterpriseIcon {
+  width: 24px;
+  height: 30px;
+  background-image: url(enterprise.svg);
+  background-position: center;
+  display: inline-block;
+  margin-right: 15px;
+}
+.collaborationIcon {
+  width: 24px;
+  height: 24px;
+  background-image: url(collaboration.svg);
+  background-position: center;
+  display: inline-block;
+  margin-right: 15px;
+}
+.conversationIcon {
+  vertical-align: middle;
+  width: 24px;
+  height: 41px;
+  background-image: url(conversation.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-right: 15px;
+  margin-left: 30px;
+}
+.contactBlock {
+  margin-top: 30px;
+  padding: 30px;
+  color: #99CA3B;
+  font-size: 12px;
+}
+/* Style the content */
+article {
+  -webkit-flex: 3.5;
+  -ms-flex: 3.5;
+  flex: 3.5;
+  background-color: #F1F2F7;
+  padding: 30px;
+}
+.breadCrum {
+  display: block;
+  color: #999999;
+}
+.breadCrum a{
+  color: #2680EB;
+  text-decoration: none;
+}
+.page {
+  background-color: #FFFFFF;
+  margin-top: 15px;
+  padding: 20px 0px;
+}
+.pageTitle {
+  color: #484848;
+  margin-left: 15px;
+  font-size: 16px;
+  font-weight: 600;
+}
+hr {
+  border-bottom-color:#EBEDF2;
+}
+.pageBody {
+  padding: 15px;
+}
+.goBack {
+  vertical-align: middle;
+  width: 24px;
+  height: 41px;
+  background-image: url(go-back-left-arrow.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-right: 15px;
+}
+.subHeader {
+  background-color: #F8F8F8;
+  height: 54px;
+  vertical-align: middle;
+}
+.subBody {
+  padding: 20px;
+  border: 1px solid #F8F8F8;
+  min-height: 200px
+}
+.title {
+  display: inline-block;
+  margin: 17px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.edit {
+  width: 24px;
+  height: 41px;
+  background-image: url(edit.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline;
+  margin: 6px;
+  float: right;
+}
+.stitle {
+  color: #B2B2B2;
+  font-size: 12px;
+}
+.sbody{
+  color: #404040;
+  font-size: 14px;
+  padding: 5px 0px;
+}
+.cpassword {
+  color: #2680EB;
+  font-size: 14px;
+}
+.profileImage{
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+.profileImage img{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+}
+.pedit {
+  width: 24px;
+  height: 24px;
+  background-image: url(edit.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  position: absolute;
+	bottom: 10px;
+	left: 90px;
+}
+.profilefields{
+  display: inline-block;
+  margin-left:20px
+}
+.profileDetail {
+  margin-bottom: 50px;
+}
+.radio {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+}
+/* Style the footer */
+footer {
+  background-color: #FFFFFF;
+  text-align: center;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.copyRight{
+  display: inline;
+  color: #7F7F7F;
+  font-size: 12px;
+  float: left;
+  padding: 23px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.fotlist ul {
+  list-style-type: none;
+  padding: 0;
+  float: right;
+}
+.fotlist li {
+  display: inline;
+  color:#7F7F7F;
+  padding: 5px;
+  margin-right: 20px;
+  font-size: 12px;
+}
+.radio {
+  color: #99CA3B
+}
+.header1 {
+  display: none;
+}
+.sBreadCrum {
+  display: none;
+}
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 700px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  article {
+    padding:0px
+  }
+  .page {
+    margin:10px
+  }
+  nav {
+    position: fixed;
+    z-index: 1;
+    top: 48px;
+  }
+  .header {
+    display: none;
+  }
+  .breadCrum {
+    display: none;
+  }
+  .sBreadCrum {
+    display: block;
+    list-style: none;
+    padding:10px;
+    background-color: #FFFFFF;
+    margin: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .sBreadCrum li {
+    display: inline-block;
+    padding: 0px 15px;
+    font-size:small;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #999999;
+    color: #A2A3B7;
+  }
+  .sBreadCrum li:last-child {
+    display: inline-block;
+    padding: 0px 15px;
+    font-size:small;
+    color: #99CA3B;
+    border-right-width: 0px;
+  }
+  .activeBread {
+    color: #99CA3B;
+  }
+  .header1 {
+    display: block;
+    background-color: white;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 1
+  }
+  .applogo1 {
+    vertical-align: middle;
+  }
+  .header1 button { 
+    border: 0;
+    width: 40px;
+    height: 30px;
+    vertical-align: super;
+  }
+  
+  .forever1 {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-position: center;
+    background-image: url(sforever.png);
+    position: relative;
+    bottom: 5px;
+    right: 5px;
+    float:inline-end;
   }
 }
